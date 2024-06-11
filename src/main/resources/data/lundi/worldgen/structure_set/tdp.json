@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "lundi:tdp",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+	"frequency": 0.2,
+    "spacing": 42,
+    "separation": 20,
+    "salt": 1646207470
+  }
+}

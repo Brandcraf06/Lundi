@@ -1,0 +1,12 @@
+{
+  "music_disc.jdg_theme": {
+    "sounds": [
+      "lundi:jdg_theme"
+    ]
+  },
+  "soumis_va": {
+    "sounds": [
+      "lundi:soumis"
+    ]
+  }
+}

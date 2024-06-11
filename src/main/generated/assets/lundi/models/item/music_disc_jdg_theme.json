@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lundi:item/music_disc_jdg_theme"
+  }
+}
