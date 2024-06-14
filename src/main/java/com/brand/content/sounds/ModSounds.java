@@ -10,6 +10,7 @@ public class ModSounds {
 
     public static SoundEvent MUSIC_DISC_JDG_THEME = register("music_disc.jdg_theme");
     public static SoundEvent SOUMIS_VA = register("soumis_va");
+    public static SoundEvent LIKE_A_DIAMOND = register("like_a_diamond");
 
 
     public static SoundEvent register(String id) {

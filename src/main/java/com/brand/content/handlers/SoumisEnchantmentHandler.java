@@ -1,6 +1,6 @@
-package com.brand.content.enchantments;
+package com.brand.content.handlers;
 
-import com.brand.Lundi;
+import com.brand.content.ModEnchantments;
 import com.brand.content.sounds.ModSounds;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.minecraft.enchantment.Enchantment;
@@ -52,7 +52,7 @@ public class SoumisEnchantmentHandler {
     private static void enchantedBook(PlayerEntity player, ItemStack itemStack) {
         ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
         Map<Enchantment, Integer> enchantments = new HashMap<>();
-        enchantments.put(Lundi.SOUMIS, 1);
+        enchantments.put(ModEnchantments.SOUMIS, 1);
         EnchantmentHelper.set(enchantments, book);
         itemStack.decrement(1);
         for (int j = 0; j < player.getInventory().size(); j++) {

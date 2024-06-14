@@ -18,6 +18,9 @@
 		"main": [
 			"com.brand.Lundi"
 		],
+		"client": [
+			"com.brand.LundiClient"
+		],
 		"fabric-datagen": [
 			"com.brand.data.LundiDataGenerator"
 		]

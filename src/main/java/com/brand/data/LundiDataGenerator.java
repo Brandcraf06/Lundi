@@ -1,21 +1,21 @@
 package com.brand.data;
 
-import com.brand.data.generators.*;
+import com.brand.data.generators.LundiModelGenerator;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.resource.conditions.v1.ConditionJsonProvider;
 import net.fabricmc.fabric.api.resource.conditions.v1.DefaultResourceConditions;
 
 public class LundiDataGenerator implements DataGeneratorEntrypoint {
-	@Override
-	public void onInitializeDataGenerator(FabricDataGenerator dataGenerator) {
+    public static ConditionJsonProvider getLoadCondition(String... modIds) {
+        return DefaultResourceConditions.allModsLoaded(modIds);
+    }
 
-		final FabricDataGenerator.Pack pack = dataGenerator.createPack();
+    @Override
+    public void onInitializeDataGenerator(FabricDataGenerator dataGenerator) {
 
-		pack.addProvider(LundiModelGenerator::new);
-	}
+        final FabricDataGenerator.Pack pack = dataGenerator.createPack();
 
-	public static ConditionJsonProvider getLoadCondition(String... modIds) {
-		return DefaultResourceConditions.allModsLoaded(modIds);
-	}
+        pack.addProvider(LundiModelGenerator::new);
+    }
 }

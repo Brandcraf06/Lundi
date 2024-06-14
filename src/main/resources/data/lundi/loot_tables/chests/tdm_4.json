@@ -188,7 +188,7 @@
             },
             {
               "function": "minecraft:enchant_with_levels",
-              "levels": 15,
+              "levels": 10,
               "conditions": [
                 {
                   "condition": "minecraft:random_chance",

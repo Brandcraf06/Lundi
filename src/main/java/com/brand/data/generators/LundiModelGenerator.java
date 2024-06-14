@@ -12,6 +12,7 @@ public class LundiModelGenerator extends FabricModelProvider {
     public LundiModelGenerator(FabricDataOutput output) {
         super(output);
     }
+
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator modelGenerator) {
 
