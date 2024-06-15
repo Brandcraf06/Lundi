@@ -1,5 +1,6 @@
 package com.brand.content.enchantments;
 
+import com.brand.content.ModEnchantments;
 import com.brand.content.sounds.ModSounds;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
@@ -28,7 +29,7 @@ public class SoumisEnchantment100 extends Enchantment {
     }
 
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other);
+        return super.canAccept(other) && other != ModEnchantments.SOUMIS;
     }
 
     public boolean isAcceptableItem(ItemStack stack) {

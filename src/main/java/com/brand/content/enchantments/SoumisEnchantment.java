@@ -1,5 +1,6 @@
 package com.brand.content.enchantments;
 
+import com.brand.content.ModEnchantments;
 import com.brand.content.sounds.ModSounds;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
@@ -15,11 +16,7 @@ public class SoumisEnchantment extends Enchantment {
     private static boolean lastHitProcessed = true;
 
     public SoumisEnchantment() {
-        super(Enchantment.Rarity.COMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
-    }
-
-    public int getMaxPower(int level) {
-        return 10;
+        super(Rarity.VERY_RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     public boolean isTreasure() {
@@ -35,7 +32,7 @@ public class SoumisEnchantment extends Enchantment {
     }
 
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other);
+        return super.canAccept(other) && other != ModEnchantments.SOUMIS_100;
     }
 
     public boolean isAcceptableItem(ItemStack stack) {
