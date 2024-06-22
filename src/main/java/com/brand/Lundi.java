@@ -3,6 +3,7 @@ package com.brand;
 import com.brand.content.ItemGroup;
 import com.brand.content.ModEnchantments;
 import com.brand.content.ModItems;
+import com.brand.content.ModBlocks;
 import com.brand.content.handlers.DiamondsHandler;
 import com.brand.content.handlers.SoumisEnchantmentHandler;
 import com.brand.content.sounds.ModSounds;
@@ -23,8 +24,9 @@ public class Lundi implements ModInitializer {
     @Override
     public void onInitialize() {
         Reflection.initialize(ModItems.class);
-        new ModSounds();
-        new ModEnchantments();
+        Reflection.initialize(ModBlocks.class);
+        Reflection.initialize(ModSounds.class);
+        Reflection.initialize(ModEnchantments.class);
         ItemGroup.init();
 
         SoumisEnchantmentHandler.init();

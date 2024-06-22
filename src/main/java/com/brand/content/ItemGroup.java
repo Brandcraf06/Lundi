@@ -25,6 +25,8 @@ public class ItemGroup {
         ItemGroupEvents.modifyEntriesEvent(LUNDI).register((entries) -> {
             entries.add(ModItems.JUS_DE_MYNTHOS);
             entries.add(ModItems.MUSIC_DISC_JDG_THEME);
+            entries.add(ModItems.MUSIC_DISC_MINECRAFT);
+            entries.add(ModBlocks.VOTRE_GUIDE);
         });
     }
 }

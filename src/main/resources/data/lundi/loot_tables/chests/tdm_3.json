@@ -2,14 +2,13 @@
   "pools": [
     {
       "rolls": {
-        "min": 2,
-        "max": 5
+        "min": 4,
+        "max": 8
       },
       "entries": [
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
-          "weight": 30,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -23,7 +22,6 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:paper",
-          "weight": 30,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -33,15 +31,26 @@
               }
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 1,
+        "max": 4
+      },
+      "entries": [
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
-          "weight": 10,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
-              "levels": 30
+              "levels": {
+                "min": 10,
+                "max": 30
+              },
+              "treasure": true
             }
           ]
         }

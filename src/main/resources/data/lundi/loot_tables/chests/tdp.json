@@ -6,15 +6,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:red_mushroom",
-          "functions": [
+          "name": "lundi:votre_guide",
+          "conditions": [
             {
-              "function": "minecraft:set_name",
-              "name": {
-                "text": "Votre guide",
-                "bold": true,
-                "italic": false
-              }
+              "condition": "minecraft:random_chance",
+              "chance": 0.5
             }
           ]
         }
@@ -22,8 +18,8 @@
     },
     {
       "rolls": {
-        "min": 1,
-        "max": 2
+        "min": 4,
+        "max": 6
       },
       "entries": [
         {

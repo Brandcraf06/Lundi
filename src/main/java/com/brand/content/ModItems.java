@@ -14,7 +14,8 @@ import net.minecraft.util.Rarity;
 
 public class ModItems {
 
-    public static final Item MUSIC_DISC_JDG_THEME = register("music_disc_jdg_theme", new MusicDiscItem(12, ModSounds.MUSIC_DISC_JDG_THEME, (new Item.Settings()).maxCount(1).rarity(Rarity.RARE), 35));
+    public static final Item MUSIC_DISC_JDG_THEME = register("music_disc_jdg_theme", new MusicDiscItem(12, ModSounds.MUSIC_DISC_JDG_THEME, (new Item.Settings()).maxCount(1).rarity(Rarity.UNCOMMON), 35));
+    public static final Item MUSIC_DISC_MINECRAFT = register("music_disc_minecraft", new MusicDiscItem(13, ModSounds.MUSIC_DISC_MINECRAFT, (new Item.Settings()).maxCount(1).rarity(Rarity.RARE), 79));
     public static final Item JUS_DE_MYNTHOS = register("jus_de_mynthos", new JuiceItem(new Item.Settings().maxCount(16).food(new FoodComponent.Builder().hunger(8).saturationModifier(0.6F)
             .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 200, 4, true, false, true), 1.0F)
             .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 1, true, false, true), 1.0F).alwaysEdible().build())));

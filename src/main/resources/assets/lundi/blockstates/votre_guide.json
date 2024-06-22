@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "powered=false,facing=north": {
+      "model": "lundi:block/votre_guide",
+      "y": 180
+    },
+    "powered=false,facing=east": {
+      "model": "lundi:block/votre_guide",
+      "y": 270
+    },
+    "powered=false,facing=south": {
+      "model": "lundi:block/votre_guide",
+      "y": 0
+    },
+    "powered=false,facing=west": {
+      "model": "lundi:block/votre_guide",
+      "y": 90
+    },
+    "powered=true,facing=north": {
+      "model": "lundi:block/votre_guide_on",
+      "y": 180
+    },
+    "powered=true,facing=east": {
+      "model": "lundi:block/votre_guide_on",
+      "y": 270
+    },
+    "powered=true,facing=south": {
+      "model": "lundi:block/votre_guide_on",
+      "y": 0
+    },
+    "powered=true,facing=west": {
+      "model": "lundi:block/votre_guide_on",
+      "y": 90
+    }
+  }
+}

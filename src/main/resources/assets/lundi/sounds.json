@@ -1,7 +1,18 @@
 {
   "music_disc.jdg_theme": {
     "sounds": [
-      "lundi:jdg_theme"
+      {
+        "name": "lundi:jdg_theme",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc.minecraft": {
+    "sounds": [
+      {
+        "name": "lundi:minecraft",
+        "stream": true
+      }
     ]
   },
   "soumis_va": {
@@ -12,6 +23,11 @@
   "like_a_diamond": {
     "sounds": [
       "lundi:shine_bright_like_a_diamond"
+    ]
+  },
+  "votre_guide": {
+    "sounds": [
+      "lundi:votre_guide"
     ]
   }
 }

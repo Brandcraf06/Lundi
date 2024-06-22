@@ -3,7 +3,7 @@
     {
       "rolls": {
         "min": 3,
-        "max": 6
+        "max": 10
       },
       "entries": [
         {
@@ -177,7 +177,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:netherite_hoe",
-          "weight": 1,
+          "weight": 2,
           "functions": [
             {
               "function": "minecraft:set_damage",
@@ -188,13 +188,28 @@
             },
             {
               "function": "minecraft:enchant_with_levels",
-              "levels": 10,
+              "levels": 15,
               "conditions": [
                 {
                   "condition": "minecraft:random_chance",
-                  "chance": 0.2
+                  "chance": 0.3
                 }
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "lundi:music_disc_minecraft",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.5
             }
           ]
         }

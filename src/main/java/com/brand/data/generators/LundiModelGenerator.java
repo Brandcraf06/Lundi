@@ -22,6 +22,6 @@ public class LundiModelGenerator extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.JUS_DE_MYNTHOS, Models.GENERATED);
         itemModelGenerator.register(ModItems.MUSIC_DISC_JDG_THEME, Models.GENERATED);
-
+        itemModelGenerator.register(ModItems.MUSIC_DISC_MINECRAFT, Models.GENERATED);
     }
 }

@@ -25,7 +25,7 @@ public class DiamondsHandler {
                 if (!cooldown.containsKey(user.getUuid()) || world.getTime() - cooldown.get(user.getUuid()) >= 35) { // 35 ticks = 1.75 seconds
 
                     world.playSound(user, blockPos, SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, SoundCategory.BLOCKS, 2.0F, 0.7F);
-                    world.playSound(user, blockPos, ModSounds.LIKE_A_DIAMOND, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                    world.playSound(user, blockPos, ModSounds.LIKE_A_DIAMOND, SoundCategory.BLOCKS, 0.9F, 1.0F);
 
                     double centerX = blockPos.getX() + 0.5;
                     double centerY = blockPos.getY() + 0.5;
