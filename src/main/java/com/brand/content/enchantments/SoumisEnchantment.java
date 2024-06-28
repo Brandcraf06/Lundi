@@ -47,8 +47,8 @@ public class SoumisEnchantment extends Enchantment {
             } else {
                 lastHitProcessed = true;
             }
-            if (totalHits >= 5 && Math.random() < 0.17) {
-                user.getWorld().playSound(null, user.getX(), user.getY(), user.getZ(), ModSounds.SOUMIS_VA, user.getSoundCategory(), 0.7f, 1.0f);
+            if (totalHits >= 4 && Math.random() < 0.40) {
+                user.getWorld().playSound(null, user.getX(), user.getY(), user.getZ(), ModSounds.SOUMIS_VA, user.getSoundCategory(), 1.3f, 1.0f);
                 totalHits = 0;
             }
         }

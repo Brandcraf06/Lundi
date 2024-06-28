@@ -38,7 +38,7 @@ public class SoumisEnchantment100 extends Enchantment {
 
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if (!user.getWorld().isClient && target instanceof LivingEntity) {
-            user.getWorld().playSound(null, user.getX(), user.getY(), user.getZ(), ModSounds.SOUMIS_VA, user.getSoundCategory(), 0.7f, 1.0f);
+            user.getWorld().playSound(null, user.getX(), user.getY(), user.getZ(), ModSounds.SOUMIS_VA, user.getSoundCategory(), 1.3f, 1.0f);
         }
     }
 }
