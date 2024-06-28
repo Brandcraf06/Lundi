@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:blue_dye"
+    },
+    "H": {
+      "item": "minecraft:goat_horn"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "R": {
+      "item": "minecraft:red_wool"
+    }
+  },
+  "pattern": [
+    "RRH",
+    " I ",
+    " D "
+  ],
+  "result": {
+    "item": "lundi:horny_horn"
+  },
+  "show_notification": true
+}

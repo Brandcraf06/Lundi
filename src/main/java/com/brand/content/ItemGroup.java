@@ -27,6 +27,10 @@ public class ItemGroup {
             entries.add(ModItems.MUSIC_DISC_JDG_THEME);
             entries.add(ModItems.MUSIC_DISC_MINECRAFT);
             entries.add(ModBlocks.VOTRE_GUIDE);
+            entries.add(ModItems.DIAMOND_HORN);
+            entries.add(ModItems.HORNY_HORN);
+            entries.add(ModItems.CLOWN_HORN);
+
         });
     }
 }

@@ -2,33 +2,31 @@ package com.brand.content.blocks;
 
 import com.brand.content.sounds.ModSounds;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.HorizontalFacingBlock;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
-import net.minecraft.text.TextColor;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
 import net.minecraft.world.event.GameEvent;
-import org.jetbrains.annotations.Nullable;
-import net.minecraft.util.math.random.Random;
-
-import java.text.DecimalFormat;
 
 public class GuideBlock extends HorizontalFacingBlock {
     public static final BooleanProperty POWERED;
@@ -60,12 +58,17 @@ public class GuideBlock extends HorizontalFacingBlock {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (world.getRegistryKey() != World.OVERWORLD) {
+            player.sendMessage(Text.literal("Non.").styled(style -> style.withColor(Formatting.RED)), true);
+            return ActionResult.success(world.isClient);
+        }
+
         if (state.get(POWERED)) {
             return ActionResult.CONSUME;
         } else {
             powerOn(state, world, pos);
             playSound(world, pos);
-            giveSpawnDistance(player, world, pos); // <-- Pass player to display spawn distance
+            giveSpawnDistance(player, world, pos);
             world.emitGameEvent(player, GameEvent.BLOCK_ACTIVATE, pos);
             return ActionResult.success(world.isClient);
         }
@@ -74,7 +77,7 @@ public class GuideBlock extends HorizontalFacingBlock {
     public void powerOn(BlockState state, World world, BlockPos pos) {
         world.setBlockState(pos, state.with(POWERED, true), 3);
         world.updateNeighborsAlways(pos, this);
-        world.scheduleBlockTick(pos, this, 20);
+        world.scheduleBlockTick(pos, this, 17);
     }
 
     @Override
@@ -89,26 +92,15 @@ public class GuideBlock extends HorizontalFacingBlock {
 
     public void giveSpawnDistance(PlayerEntity player, World world, BlockPos pos) {
         BlockPos spawnPos = world.getSpawnPos();
-        double deltaX = spawnPos.getX() - pos.getX();
-        double deltaY = spawnPos.getY() - pos.getY();
-        double deltaZ = spawnPos.getZ() - pos.getZ();
+        int deltaX = Math.abs(spawnPos.getX() - pos.getX());
+        int deltaZ = Math.abs(spawnPos.getZ() - pos.getZ());
+        int distance = Math.max(deltaX, deltaZ);
 
-        DecimalFormat df = new DecimalFormat("#.#");
-        String distanceX = df.format(deltaX);
-        String distanceY = df.format(deltaY);
-        String distanceZ = df.format(deltaZ);
+        Text message = Text.literal("Tu es à " + distance + " blocs du spawn ("
+                        + spawnPos.getX() + ", " + spawnPos.getY() + ", " + spawnPos.getZ() + ")")
+                .styled(style -> style.withColor(Formatting.LIGHT_PURPLE));
 
-        // Concatenate messages
-        Text message = Text.literal("")
-                .append(Text.literal("X: " + distanceX)
-                        .styled(style -> style.withColor(TextColor.parse("#f54040"))))
-                .append(Text.literal(" Y: " + distanceY)
-                        .styled(style -> style.withColor(TextColor.parse("#61fa61"))))
-                .append(Text.literal(" Z: " + distanceZ)
-                        .styled(style -> style.withColor(TextColor.parse("#fd6c9e"))));
-
-        // Send message to player
-        player.sendMessage(message, true); // false for chat message
+        player.sendMessage(message, true);
     }
 
     static {

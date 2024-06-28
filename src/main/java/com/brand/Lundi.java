@@ -1,10 +1,9 @@
 package com.brand;
 
 import com.brand.content.ItemGroup;
+import com.brand.content.ModBlocks;
 import com.brand.content.ModEnchantments;
 import com.brand.content.ModItems;
-import com.brand.content.ModBlocks;
-import com.brand.content.handlers.DiamondsHandler;
 import com.brand.content.handlers.SoumisEnchantmentHandler;
 import com.brand.content.sounds.ModSounds;
 import com.google.common.reflect.Reflection;
@@ -30,7 +29,5 @@ public class Lundi implements ModInitializer {
         ItemGroup.init();
 
         SoumisEnchantmentHandler.init();
-        DiamondsHandler.init();
-
     }
 }

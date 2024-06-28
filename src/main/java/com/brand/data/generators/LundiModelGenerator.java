@@ -23,5 +23,7 @@ public class LundiModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ModItems.JUS_DE_MYNTHOS, Models.GENERATED);
         itemModelGenerator.register(ModItems.MUSIC_DISC_JDG_THEME, Models.GENERATED);
         itemModelGenerator.register(ModItems.MUSIC_DISC_MINECRAFT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HORNY_HORN, Models.HANDHELD_ROD);
+        itemModelGenerator.register(ModItems.CLOWN_HORN, Models.HANDHELD_ROD);
     }
 }

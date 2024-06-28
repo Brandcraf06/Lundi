@@ -29,5 +29,15 @@
     "sounds": [
       "lundi:votre_guide"
     ]
+  },
+  "air_horn": {
+    "sounds": [
+      "lundi:air_horn"
+    ]
+  },
+  "clown_horn": {
+    "sounds": [
+      "lundi:clown_horn"
+    ]
   }
 }
